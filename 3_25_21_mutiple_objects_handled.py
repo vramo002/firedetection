@@ -296,3 +296,9 @@ while centroids_index != len(centroids):
     ####################################################################################################################
     centroids_index = centroids_index + 1
     contours_index = contours_index - 1
+
+    
+plt.show()
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
