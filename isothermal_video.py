@@ -29,18 +29,19 @@ while (cap.isOpened()):
         break
     numberofframes = numberofframes + 1
     if numberofframes % 20 == 0:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
         img = imutils.resize(img, width=320)
+        img1 = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        #img1 = imutils.resize(img1, width=320)
 
-        mask = cv2.inRange(img, lower_red, upper_red)
-        res = cv2.bitwise_and(img, img, mask=mask)
+        mask = cv2.inRange(img1, lower_red, upper_red)
+        res = cv2.bitwise_and(img1, img1, mask=mask)
         gray = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)
         if cv2.countNonZero(gray) != 0:
             foundred.append(1)
         if cv2.countNonZero(gray) == 0:
             foundred.append(0)
-        #cv2.imshow("original", img)
-        #cv2.imshow('mask', mask)
+        cv2.imshow("original", img)
+        cv2.imshow('mask', mask)
         cv2.imshow('res', res)
         cv2.waitKey(int((1 / int(fps)) * 1000))
 
