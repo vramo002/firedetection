@@ -170,8 +170,8 @@ while not detected:
         if counter == 0:
             detected = 1
             print("FIRE")
-    #if cv2.countNonZero(gray) == 0:
-        #print("NO FIRE")
+    if cv2.countNonZero(gray) == 0:
+        counter = 10
     cv2.imshow('ROI', frame)
    # cv2.imshow('mask', mask)
    # cv2.imshow('res', res)
