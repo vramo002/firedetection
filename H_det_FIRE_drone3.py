@@ -94,6 +94,8 @@ time_stamp = now.strftime("%Y-%m-%d_%H_%M_%S")
 with open(time_stamp + '_logs.txt', 'a+') as f:
     f.write('FLIGHT TEST: ' + time_stamp)
     f.write('\n')
+    f.write('Settings threshold: Lower 40 Upper 45')
+    f.write('\n')
 
 cap = cv2.VideoCapture(0)
 # videoIn.set(cv2.CAP_PROP_FRAME_WIDTH, frame_in_w);
